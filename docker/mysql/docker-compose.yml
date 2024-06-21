@@ -1,0 +1,20 @@
+version: '3.1'
+
+services:
+  forum-db:
+    image: mysql:8.0
+    container_name: mysql_container
+    hostname: mysql_host
+    environment:
+      MYSQL_ROOT_PASSWORD: qwer1234
+      MYSQL_DATABASE: forum
+      MYSQL_USER: forum
+      MYSQL_PASSWORD: qwer1234
+    ports:
+      - "3306:3306"
+    volumes:
+      - ./data:/var/lib/mysql
+    restart: always
+
+volumes:
+  db-data:
